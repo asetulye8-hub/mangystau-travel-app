@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1056219361520",
+    "project_id": "erasyl-5e794",
+    "storage_bucket": "erasyl-5e794.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1056219361520:android:1e7dd3f31a57cfd9b7d235",
+        "android_client_info": {
+          "package_name": "com.example.mangystau"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQFJL95q8SaW6QwGOm9ey_iEs73kNMqCU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
