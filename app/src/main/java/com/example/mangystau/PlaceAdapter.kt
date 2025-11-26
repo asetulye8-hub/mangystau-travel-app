@@ -7,10 +7,20 @@ import com.example.mangystau.databinding.ItemPlaceBinding
 
 class PlaceAdapter(
     private val places: List<Place>,
-    private val onClick: (Place) -> Unit
+    private val onItemClick: (Place) -> Unit
 ) : RecyclerView.Adapter<PlaceAdapter.PlaceViewHolder>() {
 
-    class PlaceViewHolder(val binding: ItemPlaceBinding) : RecyclerView.ViewHolder(binding.root)
+    inner class PlaceViewHolder(val binding: ItemPlaceBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        fun bind(place: Place) {
+            binding.placeName.text = place.name
+            binding.placeDescription.text = place.description
+            binding.placeImage.setImageResource(place.image)
+            binding.root.setOnClickListener {
+                onItemClick(place)
+            }
+        }
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlaceViewHolder {
         val binding = ItemPlaceBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -18,12 +28,8 @@ class PlaceAdapter(
     }
 
     override fun onBindViewHolder(holder: PlaceViewHolder, position: Int) {
-        val place = places[position]
-        holder.binding.placeName.text = place.name
-        holder.binding.placeDescription.text = place.description
-        holder.binding.placeImage.setImageResource(place.image)
-        holder.binding.root.setOnClickListener { onClick(place) }
+        holder.bind(places[position])
     }
 
-    override fun getItemCount() = places.size
+    override fun getItemCount(): Int = places.size
 }

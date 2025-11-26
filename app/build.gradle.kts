@@ -2,6 +2,9 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     kotlin("kapt")
+    id ("kotlin-android")
+    id ("com.google.gms.google-services") // <- ең соңында қосамыз
+
 }
 
 android {
@@ -53,11 +56,16 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.7.0")
     implementation("com.google.android.material:material:1.11.0")
     implementation("androidx.recyclerview:recyclerview:1.3.1")
-
+    // Firebase Auth
+    implementation("com.google.firebase:firebase-auth-ktx:22.3.2")
+    implementation("com.google.firebase:firebase-analytics-ktx:21.3.0")
+    implementation("com.google.firebase:firebase-auth-ktx:22.4.1")
+    implementation("com.google.firebase:firebase-firestore-ktx:26.4.0")
     // Room
     implementation("androidx.room:room-runtime:2.5.2")
     implementation("androidx.room:room-ktx:2.5.2")
     kapt("androidx.room:room-compiler:2.5.2")
+
 
     // ViewModel + LiveData + lifecycle
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
